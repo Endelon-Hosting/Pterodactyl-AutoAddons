@@ -106,7 +106,7 @@ find_pterodactyl() {
 print "Please enter your pterodactyl installation directoty"
 
 read PTERO
-PTERO_INSTALL = true
+PTERO_INSTALL=true
 update_variables
 }
 
