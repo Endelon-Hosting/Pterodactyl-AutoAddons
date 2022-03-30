@@ -4,7 +4,7 @@
 </br>
 
 ![Discord](https://img.shields.io/discord/876934115302178876?label=DISCORD&style=for-the-badge)
-![Contributors](https://img.shields.io/github/contributors/Ferks-FK/Pterodactyl-AutoAddons?style=for-the-badge)
+![Contributors](https://img.shields.io/github/contributors/Endelon-Hosting/Pterodactyl-AutoAddons?style=for-the-badge)
 
 This is a addons installation script for the [Pterodactyl Panel](https://github.com/pterodactyl/panel).<br>
 The script installs addons that are compatible with their respective panel versions.
@@ -23,7 +23,7 @@ If you have any problems with the script, ask for support in our official group 
 Just run the following command as root user.
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/main/install.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/main/install.sh)
 ```
 <h1 align="center">Attention!</h1>
 

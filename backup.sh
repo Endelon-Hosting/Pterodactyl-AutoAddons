@@ -69,22 +69,10 @@ RED='\033[0;31m'
 
 # Find where pterodactyl is installed #
 find_pterodactyl() {
-print "Looking for your pterodactyl installation..."
+print "Please enter your pterodactyl installation directoty"
 
-sleep 2
-if [ -d "/var/www/pterodactyl" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/pterodactyl"
-  elif [ -d "/var/www/panel" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/panel"
-  elif [ -d "/var/www/ptero" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/ptero"
-  else
-    PTERO_INSTALL=false
-fi
-# Update the variables after detection of the pterodactyl installation #
+read PTERO
+PTERO_INSTALL = true
 update_variables
 }
 

@@ -17,7 +17,7 @@ set -e
 get_release() {
 curl --silent \
   -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/repos/Ferks-FK/Pterodactyl-AutoAddons/releases/latest |
+  https://api.github.com/repos/Endelon-Hosting/Pterodactyl-AutoAddons/releases/latest |
   grep '"tag_name":' |
   sed -E 's/.*"([^"]+)".*/\1/'
 }
@@ -101,23 +101,10 @@ check_distro() {
 
 # Find where pterodactyl is installed #
 find_pterodactyl() {
-print "Looking for your pterodactyl installation..."
+print "Please enter your pterodactyl installation directoty"
 
-sleep 2
-if [ -d "/var/www/pterodactyl" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/pterodactyl"
-  elif [ -d "/var/www/panel" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/panel"
-  elif [ -d "/var/www/ptero" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/ptero"
-  else
-    PTERO_INSTALL=false
-fi
-# Update the variables after detection of the pterodactyl installation #
-update_variables
+read PTERO
+PTERO_INSTALL = true
 }
 
 # Verify Compatibility #
@@ -177,7 +164,7 @@ download_files() {
 print "Downloading files..."
 
 mkdir -p $PTERO/temp
-curl -sSLo $PTERO/temp/Server_Router_Icons.tar.gz https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Server_Router_Icons/Server_Router_Icons.tar.gz
+curl -sSLo $PTERO/temp/Server_Router_Icons.tar.gz https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Server_Router_Icons/Server_Router_Icons.tar.gz
 tar -xzvf $PTERO/temp/Server_Router_Icons.tar.gz -C $PTERO/temp
 cp -rf -- $PTERO/temp/Server_Router_Icons/* "$PTERO"
 rm -rf $PTERO/temp

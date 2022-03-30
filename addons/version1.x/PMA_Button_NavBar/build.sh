@@ -17,7 +17,7 @@ set -e
 get_release() {
 curl --silent \
   -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/repos/Ferks-FK/Pterodactyl-AutoAddons/releases/latest |
+  https://api.github.com/repos/Endelon-Hosting/Pterodactyl-AutoAddons/releases/latest |
   grep '"tag_name":' |
   sed -E 's/.*"([^"]+)".*/\1/'
 }
@@ -143,23 +143,10 @@ check_distro() {
 
 # Find where pterodactyl is installed #
 find_pterodactyl() {
-print "Looking for your pterodactyl installation..."
+print "Please enter your pterodactyl installation directoty"
 
-sleep 2
-if [ -d "/var/www/pterodactyl" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/pterodactyl"
-  elif [ -d "/var/www/panel" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/panel"
-  elif [ -d "/var/www/ptero" ]; then
-    PTERO_INSTALL=true
-    PTERO="/var/www/ptero"
-  else
-    PTERO_INSTALL=false
-fi
-# Update the variables after detection of the pterodactyl installation #
-update_variables
+read PTERO
+PTERO_INSTALL = true
 }
 
 # Verify Compatibility #
@@ -224,9 +211,9 @@ curl -sSLo $PTERO/public/phpmyadmin/phpMyAdmin-${PMA_VERSION}-all-languages.tar.
 tar -xzvf $PTERO/public/phpmyadmin/phpMyAdmin-${PMA_VERSION}-all-languages.tar.gz -C $PTERO/public/phpmyadmin
 cp -rf -- $PTERO/public/phpmyadmin/phpMyAdmin-${PMA_VERSION}-all-languages/* $PTERO/public/phpmyadmin
 rm -r $PTERO/public/phpmyadmin/phpMyAdmin-${PMA_VERSION}-all-languages $PTERO/public/phpmyadmin/phpMyAdmin-${PMA_VERSION}-all-languages.tar.gz $PTERO/public/phpmyadmin/config.sample.inc.php
-curl -sSLo $PTERO/public/phpmyadmin/config.inc.php https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_NavBar/config.inc.php
+curl -sSLo $PTERO/public/phpmyadmin/config.inc.php https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_NavBar/config.inc.php
 mkdir -p $PTERO/temp
-curl -sSLo $PTERO/temp/PMA_Button_NavBar.tar.gz https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_NavBar/PMA_Button_NavBar.tar.gz
+curl -sSLo $PTERO/temp/PMA_Button_NavBar.tar.gz https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_NavBar/PMA_Button_NavBar.tar.gz
 tar -xzvf $PTERO/temp/PMA_Button_NavBar.tar.gz -C $PTERO/temp
 cp -rf -- $PTERO/temp/PMA_Button_NavBar/* $PTERO
 sed -i -e "s@<code>@<a href='/phpmyadmin' target='_blank'>PhpMyAdmin</a>@g" "$PMA_ARCH"

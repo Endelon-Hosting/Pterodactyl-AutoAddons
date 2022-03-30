@@ -16,7 +16,7 @@ set -e
 get_release() {
 curl --silent \
   -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/repos/Ferks-FK/Pterodactyl-AutoAddons/releases/latest |
+  https://api.github.com/repos/Endelon-Hosting/Pterodactyl-AutoAddons/releases/latest |
   grep '"tag_name":' |
   sed -E 's/.*"([^"]+)".*/\1/'
 }
@@ -80,47 +80,47 @@ echo
 print_brake 70
 echo "* Pterodactyl-AutoAddons Script @ $SCRIPT_VERSION"
 echo
-echo "* Copyright (C) 2021 - $(date +%Y), Ferks-FK."
-echo "* https://github.com/Ferks-FK/Pterodactyl-AutoAddons"
+echo "* Copyright (C) 2021 - $(date +%Y), Ferks-FK. Modified by Endelon Hosting"
+echo "* https://github.com/Endelon-Hosting/Pterodactyl-AutoAddons"
 echo
 echo "* This script is not associated with the official Pterodactyl Project."
 print_brake 70
 echo
 
 Backup() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/backup.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/backup.sh)
 }
 
 More_Buttons() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/More_Buttons/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/More_Buttons/build.sh)
 }
 
 More_Server_Info() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/More_Server_Info/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/More_Server_Info/build.sh)
 }
 
 Server_Router_Icons() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Server_Router_Icons/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Server_Router_Icons/build.sh)
 }
 
 PMA_Button_NavBar() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_NavBar/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_NavBar/build.sh)
 }
 
 PMA_Button_Database_Tab() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_Database_Tab/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/PMA_Button_Database_Tab/build.sh)
 }
 
 MC_Paste() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/MC_Paste/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/MC_Paste/build.sh)
 }
 
 Bigger_Console() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Bigger_Console/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Bigger_Console/build.sh)
 }
 
 Files_In_Editor() {
-bash <(curl -s https://raw.githubusercontent.com/Ferks-FK/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Files_In_Editor/build.sh)
+bash <(curl -s https://raw.githubusercontent.com/Endelon-Hosting/Pterodactyl-AutoAddons/"${SCRIPT_VERSION}"/addons/version1.x/Files_In_Editor/build.sh)
 }
 
 
