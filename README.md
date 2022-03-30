@@ -1,5 +1,5 @@
 <h1 align="center"> 
-    Pterodactyl-AutoAddons
+    Pterodactyl-AutoAddons (For aaPanel installations)
 </h1>
 </br>
 
