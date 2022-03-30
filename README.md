@@ -3,8 +3,7 @@
 </h1>
 </br>
 
-![Discord](https://img.shields.io/discord/876934115302178876?label=DISCORD&style=for-the-badge)
-![Contributors](https://img.shields.io/github/contributors/Endelon-Hosting/Pterodactyl-AutoAddons?style=for-the-badge)
+This repo is not for production use
 
 This is a addons installation script for the [Pterodactyl Panel](https://github.com/pterodactyl/panel).<br>
 The script installs addons that are compatible with their respective panel versions.
